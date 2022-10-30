@@ -37,12 +37,11 @@ const FnList = [ //[제목, 굵게, 밑줄, 인용문, 코드블럭, 링크, 이
 ]
 
 const CreateBtnElement = (FnStart,FnEnd,icon) => {
-    return `<button data-start="${FnStart}" data-end="${FnEnd}">${icon}</button>`
+    return `<button class="FnBtn" data-start="${FnStart}" data-end="${FnEnd}">${icon}</button>`
 }
 
 const CreateAllButton = (FnList) => {
     const box = document.getElementById("Button-Box")
-    console.log(box);
     FnList.map(obj => {
         const {start , end , icon} = obj;
         box.innerHTML += CreateBtnElement(start,end,icon)
@@ -63,6 +62,12 @@ const CreateTextarea = container => {
     textarea.rows = 6
     container.appendChild(textarea)
 }
+const getSelectedText = () => {
+    var start = textarea.selectionStart;
+    var end = textarea.selectionEnd;
+    return textarea.value.substring(start, end);
+
+}
 
 (()=> {
     const container = document.getElementById("Editor-container")
@@ -75,4 +80,11 @@ const textarea = document.getElementById("Editor")
 
 textarea.addEventListener("input", (event)=> {
     document.getElementById("preview").innerHTML = marked.parse(event.target.value)
+})
+
+const FnBtns = document.querySelectorAll(".FnBtn")
+FnBtns.forEach(btn => {
+    btn.addEventListener("click", ()=> {
+        // document.execCommand('insertHTML',false,text);
+    })
 })

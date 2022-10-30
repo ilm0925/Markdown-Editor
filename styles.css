@@ -22,3 +22,9 @@ button {
   margin-top: 10px;
   padding: 30px;
 }
+textarea {
+    font-size: 30px;
+}
+#preview > * {
+    font-size: 30px;
+}
