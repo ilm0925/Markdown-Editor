@@ -1,20 +1,24 @@
-body {
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    align-items: center;
-    
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 #Editor-container {
-    width: 60%;
+  width: 60%;
 }
 #Button-Box {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
 }
 
 button {
-    background: none;
-    width: 100px;
+  background: none;
+  width: 100px;
+}
+
+#preview {
+  border-top: 1px solid white;
+  margin-top: 10px;
+  padding: 30px;
 }

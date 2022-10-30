@@ -70,3 +70,9 @@ const CreateTextarea = container => {
     CreateTextarea(container)
     
 })()
+
+const textarea = document.getElementById("Editor")
+
+textarea.addEventListener("input", (event)=> {
+    document.getElementById("preview").innerHTML = marked.parse(event.target.value)
+})
