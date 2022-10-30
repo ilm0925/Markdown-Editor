@@ -1,4 +1,9 @@
-const FnList = [
+const FnList = [ //[제목, 굵게, 밑줄, 인용문, 코드블럭, 링크, 이미지]
+    {
+        start : "#",
+        end : "",
+        icon : '<i class="fa-solid fa-heading"></i>'
+    },
     {
         start : "**",
         end : "**",
@@ -9,6 +14,26 @@ const FnList = [
         end : "__",
         icon : '<i class="fa-solid fa-underline"></i>'
     },
+    {
+        start : "> ",
+        end : "",
+        icon : '<i class="fa-solid fa-quote-left"></i>'
+    },
+    {
+        start : "```",
+        end : "```",
+        icon : '<i class="fa-solid fa-code"></i>'
+    },
+    {
+        start : "[링크](url)",
+        end : "",
+        icon : '<i class="fa-solid fa-link"></i>'
+    },
+    {
+        start : "![이미지 설명/필수 아님](url)",
+        end : "",
+        icon : '<i class="fa-solid fa-image"></i>'
+    }
 ]
 
 const CreateBtnElement = (FnStart,FnEnd,icon) => {
