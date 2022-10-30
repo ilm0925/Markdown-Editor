@@ -1,6 +1,6 @@
 const FnList = [ //[제목, 굵게, 밑줄, 인용문, 코드블럭, 링크, 이미지]
     {
-        start : "#",
+        start : "# ",
         end : "",
         icon : '<i class="fa-solid fa-heading"></i>'
     },
@@ -85,6 +85,12 @@ textarea.addEventListener("input", (event)=> {
 const FnBtns = document.querySelectorAll(".FnBtn")
 FnBtns.forEach(btn => {
     btn.addEventListener("click", ()=> {
-        // document.execCommand('insertHTML',false,text);
+        const start = btn.dataset.start
+        const end = btn.dataset.end
+        const SelectedText = getSelectedText()
+        const text = start + (!SelectedText? " " : SelectedText) + end
+        document.execCommand('insertHTML',false,text);
     })
 })
+
+// 2시 17분 시작 => 3시1분에 완성
