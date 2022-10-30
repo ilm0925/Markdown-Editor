@@ -20,8 +20,8 @@ const FnList = [ //[제목, 굵게, 밑줄, 인용문, 코드블럭, 링크, 이
         icon : '<i class="fa-solid fa-quote-left"></i>'
     },
     {
-        start : "```",
-        end : "```",
+        start : "```\n",
+        end : "\n```",
         icon : '<i class="fa-solid fa-code"></i>'
     },
     {
@@ -89,6 +89,8 @@ FnBtns.forEach(btn => {
         const end = btn.dataset.end
         const SelectedText = getSelectedText()
         const text = start + (!SelectedText? " " : SelectedText) + end
+
+        console.log(SelectedText);
         document.execCommand('insertHTML',false,text);
     })
 })
