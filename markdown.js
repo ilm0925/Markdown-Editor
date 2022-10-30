@@ -10,8 +10,8 @@ const FnList = [ //[제목, 굵게, 밑줄, 인용문, 코드블럭, 링크, 이
         icon : '<i class="fa-solid fa-bold"></i>'
     },
     {
-        start : "__",
-        end : "__",
+        start : "___",
+        end : "___",
         icon : '<i class="fa-solid fa-underline"></i>'
     },
     {
