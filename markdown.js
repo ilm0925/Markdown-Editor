@@ -57,8 +57,16 @@ const CreateBtnBox = container => {
 
 }
 
+const CreateTextarea = container => {
+    const textarea = document.createElement("textarea")
+    textarea.id = "Editor"
+    textarea.rows = 6
+    container.appendChild(textarea)
+}
 
 (()=> {
     const container = document.getElementById("Editor-container")
     CreateBtnBox(container)
+    CreateTextarea(container)
+    
 })()
