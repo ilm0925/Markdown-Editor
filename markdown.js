@@ -69,6 +69,11 @@ const getSelectedText = () => {
 
 }
 
+const CancelFunction = (SelectedText,fn) => {
+    return SelectedText.replaceAll(fn.replaceAll("\n",""),"") //\n은 Codeblock을 인식을 못함
+    
+}
+
 (()=> {
     const container = document.getElementById("Editor-container")
     CreateBtnBox(container)
@@ -88,9 +93,11 @@ FnBtns.forEach(btn => {
         const start = btn.dataset.start
         const end = btn.dataset.end
         const SelectedText = getSelectedText()
+        if(SelectedText.includes(start)){
+            const cancle = CancelFunction(SelectedText,start)
+            return document.execCommand('insertHTML',false,cancle);
+        }
         const text = start + (!SelectedText? " " : SelectedText) + end
-
-        console.log(SelectedText);
         document.execCommand('insertHTML',false,text);
     })
 })
